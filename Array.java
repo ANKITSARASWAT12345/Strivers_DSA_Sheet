@@ -27,6 +27,7 @@
 
 //removing duplicates for the unsorted arrray
 
+import java.util.Arrays;
 import java.util.HashMap;
 
 /*class Array{
@@ -250,7 +251,7 @@ import java.util.HashMap;
 
 //using two pointer approch
 
-class Array{
+/*class Array{
    public static void main(String[] args) {
       int arr[]={1,2,5,1,9};
       int n=arr.length;
@@ -280,5 +281,166 @@ class Array{
           }
           return max_lenght;
 
+   }
+}*/
+
+
+
+//Two Sum : Check if a pair with given sum exists in Array
+
+//two pointer approch
+
+/*public class Array {
+
+    public static void main(String[] args) {
+      int arr[]={1,5,3,7,6,2};//{1,2,3,5,7};
+      int target=22;
+      int n=arr.length;
+      boolean result=two_sum(arr,n,target);
+      System.out.println(result);
+    }
+    public static boolean two_sum(int arr[],int n,int target){
+          int left=0;
+          int right=n-1;
+          Arrays.sort(arr);
+
+          while(left<right){
+             int sum=arr[left]+arr[right];
+             if(sum==target){
+               return true;
+             }
+             else if(sum<target){
+               left++;
+             }
+             else{
+               right--;
+             }
+          }
+          return false;
+
+    }
+}*/
+
+
+
+//Maximum differenece problem with order
+
+
+/*class Array{
+   public static void main(String[] args) {
+      int arr[]={1,3,10,6,4,8,1};
+      int min_element=arr[0];
+      int max_diff=0;
+      int n=arr.length;
+      for(int i=1;i<n;i++){
+           max_diff=Math.max(max_diff,arr[i]-min_element);
+           min_element=Math.min(min_element,arr[i]);
+      }
+
+      System.out.println(max_diff);
+   }
+}*/
+
+
+//Maximum sum subArray
+
+
+
+/*public class Array {
+
+   public static void main(String[] args) {
+      int arr[]={-6,-1,-8};
+      int n=arr.length;
+      int res=arr[0];
+      int max_ending=arr[0];
+      for(int i=1;i<n;i++){
+         max_ending=Math.max(max_ending+arr[i],arr[i]);
+         res=Math.max(res,max_ending);
+      }
+      System.out.println(res);
+   }
+}*/
+
+
+//Majority element
+
+/*class Array{
+   public static void main(String[] args) {
+      int arr[]={3,7,4,7,7,5};
+      int n=arr.length;
+      int Majority_element=Majority_element_find(arr,n);
+      System.out.println(Majority_element);
+   }
+   public static int Majority_element_find(int arr[],int n){
+      int res=0;
+      int count=1;
+      for(int i=1;i<n;i++){
+         if(arr[res]==arr[i]){
+            count++;
+         }
+         else{
+            count--;
+         }
+         if(count==0){
+            res=i;
+            count=1;
+         }
+      }
+
+      count=0;
+      for(int i=0;i<n;i++){
+         if(arr[res]==arr[i]){
+            count++;
+         }
+      }
+         if(count<=n/2){
+            res=-1;
+         }
+      
+      return res;
+
+
+   }
+}*/
+
+
+/*Stock Buy And Sell
+
+Problem Statement: You are given an array of prices where prices[i] is the price of a given stock on an ith day.
+
+You want to maximize your profit by choosing a single day to buy one stock and choosing a different day in the future to sell that stock.
+ Return the maximum profit you can achieve from this transaction. If you cannot achieve any profit, return 0.*/
+
+
+ /*class Array{
+   public static void main(String[] args) {
+      int arr[]={7,1,5,3,6,4};
+      int n=arr.length;
+      int max_profit=0;
+      for(int i=0;i<n;i++){
+         for(int j=i+1;j<n;j++){
+            if(arr[j]>arr[i]){
+               max_profit=Math.max(arr[j]-arr[i],max_profit);
+            }
+         }
+      }
+      System.out.println(max_profit);
+   }
+ }*/
+
+
+//optimal approch
+
+class Array{
+   public static void main(String[] args) {
+      int arr[]={7,1,5,3,6,4};
+      int n=arr.length;
+      int min_element=arr[0];
+      int max_profit=0;
+      for(int i=0;i<n;i++){
+         max_profit=Math.max(arr[i]-min_element,max_profit);
+         min_element=Math.min(min_element, arr[i]);
+      }
+      System.out.println(max_profit);
    }
 }
