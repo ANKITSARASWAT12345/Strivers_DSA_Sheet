@@ -29,6 +29,7 @@
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 
 /*class Array{
    public static void main(String[] args) {
@@ -431,7 +432,7 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 
 //optimal approch
 
-class Array{
+/*class Array{
    public static void main(String[] args) {
       int arr[]={7,1,5,3,6,4};
       int n=arr.length;
@@ -443,4 +444,80 @@ class Array{
       }
       System.out.println(max_profit);
    }
+}*/
+
+
+//longest consecutive sequence
+
+/*class Array{
+   public static void main(String[] args) {
+      int arr[]={100,200,5,6,1,3,4,2};
+      int n=arr.length;
+      int longest=longest_sequence(arr,n);
+      System.out.println(longest);
+   }
+   public static int longest_sequence(int arr[],int n){
+
+
+      int longest=1;
+      if(n==0){
+         return 0;
+      }
+      HashSet<Integer> st=new HashSet<>();
+      for(int i=0;i<n;i++){
+         st.add(arr[i]);
+      }
+
+      for(int item:st){
+           if(!st.contains(item-1)){
+            int count=1;
+            int x=item;
+            while(st.contains(x+1)){
+               x=x+1;
+               count++;
+            }
+            longest=Math.max(longest,count);
+           }
+      }
+      return longest;
+   }
+}*/
+
+
+//Count Subarray sum Equals K
+
+/*class Array{
+   public static void main(String[] args) {
+      int arr[]={3,1,2,4};
+      int n=arr.length;
+      int count=0;
+      int k=6;
+      int curr_sum=0;
+      for(int i=0;i<n;i++){
+         curr_sum+=arr[i];
+         if(curr_sum==k){
+            count++;
+         }
+      }
+      System.out.println(count);
+   }
+}*/
+
+//
+class Array{
+   public static void main(String[] args) {
+      int arr[]={3,1,2,4};
+      int n=arr.length;
+      int count=0;
+      int k=6;
+      int curr_sum=0;
+      for(int i=0;i<n;i++){
+         curr_sum+=arr[i];
+         if(curr_sum==k){
+            count++;
+         }
+      }
+      System.out.println(count);
+   }
 }
+
