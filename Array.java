@@ -504,20 +504,5 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 }*/
 
 //
-class Array{
-   public static void main(String[] args) {
-      int arr[]={3,1,2,4};
-      int n=arr.length;
-      int count=0;
-      int k=6;
-      int curr_sum=0;
-      for(int i=0;i<n;i++){
-         curr_sum+=arr[i];
-         if(curr_sum==k){
-            count++;
-         }
-      }
-      System.out.println(count);
-   }
-}
+
 
