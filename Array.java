@@ -506,3 +506,49 @@ You want to maximize your profit by choosing a single day to buy one stock and c
 //
 
 
+
+
+/*class Array{
+   public static void main(String[] args) {
+      String str="UDDDUDUU";
+      int n=8;
+      int level=0;
+      int valley=0;
+      for(int i=0;i<n;i++){
+          if(str.charAt(i)=='U'){
+            level++;
+          }
+          else if(str.charAt(i)=='D'){
+            if(level==1){
+               valley++;
+            }
+            level--;
+          }
+      }
+      System.out.println(valley);
+
+   }
+}*/
+
+
+class Array{
+   public static void main(String[] args) {
+      
+      int n=8;
+      int level=0;
+      int valley=0;
+      for(int i=0;i<n;i++){
+          if(str.charAt(i)=='U'){
+            level++;
+          }
+          else if(str.charAt(i)=='D'){
+            if(level==1){
+               valley++;
+            }
+            level--;
+          }
+      }
+      System.out.println(target);
+
+   }
+}
