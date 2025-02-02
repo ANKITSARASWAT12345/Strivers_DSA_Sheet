@@ -114,61 +114,99 @@ class Test {
 } */
 
 
-/*class Test{
-    public static void main(String[] args) {
-        for(int i=0;i<5;i++){
-            for(int j=0;j<i;j++){
-                System.out.print("*"+" ");
-            }
-            System.out.println();
-        }
+//sort a linked list
+
+class Node{
+    int data;
+    Node next;
+    Node(int x){
+        data=x;
+        next=null;
     }
-}*/
-
-
-
-/*class Test{
-    public static void main(String[] args) {
-        for(int i=0;i<5;i++){
-            for(int j=0;j<=i;j++){
-                if(j==4){
-                  break;
-                }
-                System.out.print("1"+" ");
-            }
-            System.out.println();
-        }
-    }
-}*/
-
-public class Test
-{
-	public static void main(String[] args) {
-		int n=3,temp=1;
-		for(int i =0; i<n; i++) {
-			if(i%2==0) {
-				for(int j = 0; j<=n; j++) {
-					if(j==n ) {
-						System.out.print(temp+1);
-					} else {
-						System.out.print(temp);
-					}
-				}
-				temp++;
-			}
-			if(i%2!=0) {
-				for(int j = n; j>=0; j--) {
-					if(j==n ) {
-						System.out.print(temp+1);
-					} else {
-						System.out.print(temp);
-					}
-				}
-				temp++;
-			}
-
-			System.out.println();
-
-		}
-	}
 }
+
+class Test{
+    public static void main(String[] args) {
+    Node head = new Node(3);
+    head.next = new Node(2);
+    head.next.next = new Node(5);
+    head.next.next.next = new Node(499);
+    head.next.next.next.next = new Node(1);
+
+    System.out.print("Original Linked List: ");
+    printLinkedList(head);
+    head=sortLinkedList(head);
+    System.out.println("Linked list after sorting");
+    printLinkedList(head);
+
+    }
+    public static void printLinkedList(Node head){
+        Node curr=head;
+        while(curr!=null){
+            System.out.print(curr.data+" ");
+            curr=curr.next;
+        }
+    }
+    public static Node sortLinkedList(Node head){
+        if(head==null || head.next==null){
+            return head;
+        }
+
+        Node middle=findMiddle(head);
+
+        Node leftNode=head;
+        Node rightNode=middle.next;
+        middle.next=null;
+
+        leftNode=sortLinkedList(leftNode);
+        rightNode=sortLinkedList(rightNode);
+
+        return mergeTwoSortedLinkedList(leftNode,rightNode);
+    }
+
+    public static Node mergeTwoSortedLinkedList(Node List1,Node List2){
+
+      Node dummyNode=new Node(-1);
+        Node temp=dummyNode;
+        while(List1!=null && List2!=null){
+            if(List1.data<=List2.data){
+                 temp.next=List1;
+                 List1=List1.next;
+            }
+            else{
+                temp.next=List2;
+                List2=List2.next;
+            }
+            temp=temp.next;
+
+            if(List1!=null){
+                temp.next=List1;
+            }
+            else{
+                temp.next=List2;
+            }
+        }
+        return dummyNode.next;
+
+    }
+
+
+    public static Node findMiddle(Node head){
+        if(head==null || head.next==null){
+            return head;
+        }
+        Node slow=head;
+        Node fast=head.next;
+        while(fast!=null && fast.next!=null){
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return slow;
+    }
+}
+
+
+
+
+
+
