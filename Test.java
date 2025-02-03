@@ -116,7 +116,7 @@ class Test {
 
 //sort a linked list
 
-class Node{
+/*class Node{
     int data;
     Node next;
     Node(int x){
@@ -203,7 +203,55 @@ class Test{
         }
         return slow;
     }
+}*/
+
+
+/*class Node{
+    int data;
+    Node next;
+    Node(int x){
+        data=x;
+        next=null;
+    }
 }
+
+class Test{
+    public static void main(String[] args) {
+        Node head1=new Node(1);
+        head1.next=new Node(2);
+        head1.next.next=new Node(3);
+        head1.next.next.next=new Node(4);
+        head1.next.next.next.next=new Node(5);
+
+        Node head2=new Node(10);
+     
+        head2.next=head1.next.next;
+        printList(head2);
+        printList(head1);
+        Node head=findIntersectPoint(head1,head2);
+        System.out.println(head.data);
+
+    }
+    public static Node findIntersectPoint(Node head1,Node head2){
+        Node a=head1;
+        Node b=head2;
+        while(a!=b){
+            a=a==null?head2:a.next;
+            b=b==null?head1:b.next;
+        }
+        return a;
+    }
+    public static void printList(Node head){
+        Node curr=head;
+        while(curr!=null){
+            System.out.print(curr.data+" ");
+            curr=curr.next;
+        }
+        System.out.println();
+    }
+}*/
+
+
 
 
 
