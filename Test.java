@@ -251,6 +251,55 @@ class Test{
     }
 }*/
 
+/*class Test{
+    public static void main(String[] args) {
+        int arr[]={1,2,3,50,50,6};
+        int largest=Integer.MIN_VALUE;
+        int second_larget=Integer.MIN_VALUE;
+        for(int i=0;i<arr.length;i++){
+            if(arr[i]>largest){
+                second_larget=largest;
+                largest=arr[i];
+
+            }
+            else if(arr[i]>second_larget&& arr[i]!=largest){
+                second_larget=arr[i];
+            }
+        }
+        // for(int i=0;i<arr.length;i++){
+        //     if(arr[i]>second_larget&& arr[i]!=largest){
+        //         second_larget=arr[i];
+        //     }
+        // }
+        System.out.println(second_larget);
+
+        
+    }
+}*/
+
+
+//remove duplicate from a sorted array
+class Test{
+    public static void main(String[] args) {
+        int arr[]={1,1,2,3,3,4};
+        int n=arr.length;
+       
+        int j=1;
+        
+        for(int i=1;i<n;i++){
+         if(arr[i]!=arr[i-1]){
+            arr[j++]=arr[i];
+         }
+        }
+        for(int i=0;i<j;i++){
+            System.out.print(arr[i]+" ");
+        }
+    }
+}
+
+
+
+
 
 
 
