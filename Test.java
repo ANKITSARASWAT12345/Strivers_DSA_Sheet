@@ -279,7 +279,7 @@ class Test{
 
 
 //remove duplicate from a sorted array
-class Test{
+/*class Test{
     public static void main(String[] args) {
         int arr[]={1,1,2,3,3,4};
         int n=arr.length;
@@ -296,8 +296,129 @@ class Test{
         }
     }
 }
+*/
 
 
+
+/*class Test{
+    public static void main(String[] args) {
+        int arr[]={1,2,3,4,5};
+        int n=arr.length;
+        int temp[]=new int[n];
+      int c=0;
+        int curr_sum=0;
+        for(int i=0;i<n;i++){
+            curr_sum+=arr[i];
+            temp[i]=temp[i]+curr_sum;
+        }
+
+        for(int i=0;i<n;i++){
+            System.out.print(temp[i]+" ");
+        }
+
+    }
+}*/
+
+//print Even length words in a String
+
+/*class Test{
+    public static void main(String[] args) {
+        String st="i am ankit saraswat from mathura";
+        for(String s:st.split(" ")){
+            if(s.length()%2==0){
+                System.out.println(s);
+            }
+        }
+    }
+}*/
+
+
+//Insert a String into another String in Java
+
+
+/*class Test{
+    public static void main(String[] args) {
+        String str="ankit saraswat";
+        String s="kumar";
+        int index=5;
+        String new_string=new String();
+        for(int i=0;i<str.length();i++){
+            new_string+=str.charAt(i);
+            if(i==index){
+                new_string+=s;
+            }
+        }
+        System.out.println(new_string);
+    }
+}*/
+
+
+//check two string are anagram of each other
+
+/*class Test{
+    public static void main(String[] args) {
+        char str1[]="ankit".toCharArray();
+        char str2[]="kantti".toCharArray();
+        int c=256;
+        int count[]=new int[c];
+        boolean result=true;
+     
+
+        for(int i=0;i<str1.length;i++){
+            count[str1[i]-'a']++;
+            count[str2[i]-'a']--;
+        }
+       
+
+          for(int i=0;i<c;i++){
+            if(count[i]!=0){
+                result=false;
+            }
+          }
+
+          System.out.println(result);
+
+
+
+    }
+}*/
+
+//same question using hashmap
+
+import java.util.HashMap;
+import java.util.*;
+
+class Test{
+    public static void main(String[] args) {
+        String s1="ankit";
+        String s2="ktinda";
+        System.out.println(find_anagram(s1,s2));
+
+    }
+    public static boolean find_anagram(String s1,String s2){
+        HashMap<Character,Integer> mp=new HashMap<>();
+        for(int i=0;i<s1.length();i++){
+            if(mp.containsKey(s1.charAt(i))){
+                mp.put(s1.charAt(i),mp.get(s1.charAt(i))+1);
+            }
+            else{
+                mp.put(s1.charAt(i), 1);
+            }
+        }
+        for(int i=0;i<s2.length();i++){
+           if(mp.containsKey(s2.charAt(i))){
+            mp.put(s2.charAt(i), mp.get(s2.charAt(i))-1);
+           }
+        }
+        Set<Character> st=mp.keySet();
+        for(Character key:st){
+            if(mp.get(key)!=0){
+                return false;
+            }
+        }
+        return true;
+    }
+}
 
 
 
