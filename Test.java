@@ -388,7 +388,7 @@ class Test{
 import java.util.HashMap;
 import java.util.*;
 
-class Test{
+/*class Test{
     public static void main(String[] args) {
         String s1="ankit";
         String s2="ktinda";
@@ -417,6 +417,79 @@ class Test{
             }
         }
         return true;
+    }
+}*/
+
+
+//find the number of vowel and consonants in the string
+
+
+/*class Test{
+    public static void main(String[] args) {
+        String str="ankueit";
+       totalVowel(str);
+    }
+    public static void totalVowel(String str){
+            int countVowel=0;
+            int countConso=0;
+
+            for(int i=0;i<str.length();i++){
+                if(isVowel(str.charAt(i))){
+                    countVowel++;
+                }
+                
+                else{
+                   countConso++;
+                }
+            }
+           System.out.println(countVowel);
+            System.out.println(countConso);
+    }
+    public static boolean isVowel(char ch){
+        ch=Character.toUpperCase(ch);
+        return (ch=='A'|| ch=='E'|| ch=='I'|| ch=='O'|| ch=='U')&&ch>=65&&ch<=90;
+    }
+}*/
+
+
+//you are given a single character ch if the character is in lower case then change it into upper case ,if it is in already is in uppercase then remain it same .
+
+
+/*class Test{
+    public static void main(String[] args) {
+        char ch='a';
+
+        if(ch>='a'&& ch<='z'){
+            System.out.println(Character.toUpperCase(ch));
+        }
+        else{
+            System.out.println(ch);
+        }
+    }
+}*/
+
+//taking character as a input form user
+
+/*class Test{
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        System.out.println("please enter a character as input");
+        char ch=sc.next().charAt(0);
+        System.out.println(ch);
+    }
+}*/
+
+//you are given an number N .Find and print the product of all number form 1 to N.
+
+
+class Test{
+    public static void main(String[] args) {
+        int N=5;
+        int product=1;
+        for(int i=1;i<=N;i++){
+            product=product*i;
+        }
+        System.out.println(product);
     }
 }
 
