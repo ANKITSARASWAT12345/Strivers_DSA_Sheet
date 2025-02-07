@@ -482,7 +482,7 @@ import java.util.*;
 //you are given an number N .Find and print the product of all number form 1 to N.
 
 
-class Test{
+/*class Test{
     public static void main(String[] args) {
         int N=5;
         int product=1;
@@ -490,6 +490,36 @@ class Test{
             product=product*i;
         }
         System.out.println(product);
+    }
+}*/
+
+
+//
+
+class Test{
+    public static void main(String[] args) {
+       int arr1[]={1,2,3,4};
+       int arr2[]={1,2,3};
+       int arr3[]={1,2};
+
+       int sum1=0;
+       int sum2=0;
+       int sum3=0;
+       for(int i=0;i<arr1.length;i++){
+        sum1+=arr1[i];
+       }  
+       for(int i=0;i<arr2.length;i++){
+        sum2+=arr2[i];
+       }  
+       for(int i=0;i<arr3.length;i++){
+        sum3+=arr3[i];
+       }   
+       int x=sum1-sum2;
+       int y=sum2-sum3;
+
+       System.out.println(x);
+       System.out.println(y);
+       
     }
 }
 
